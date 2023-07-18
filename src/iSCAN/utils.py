@@ -17,7 +17,7 @@ def set_seed(seed: int = 42) -> None:
     os.environ["PYTHONHASHSEED"] = str(seed)
     print(f"Random seed set as {seed}")
 
-def NodesMetrics(y_actual, y_pred):
+def nodes_metrics(y_actual, y_pred):
     # y_actual is the list for true shifted nodes
     # y_pred is the list for predicted shifted nodes
     prec = precision_score(y_actual,y_pred, zero_division=0)
@@ -25,13 +25,13 @@ def NodesMetrics(y_actual, y_pred):
     f1 = f1_score(y_actual, y_pred, zero_division=0)
     return [prec,recall,f1]
 
-def DDagMetrics(adj_true,adj_pred):
+def ddag_metrics(adj_true,adj_pred):
     shd = np.sum(adj_true!=adj_pred)
     prec = precision_score(adj_true.flatten(),adj_pred.flatten(),zero_division=0)
     recall = recall_score(adj_true.flatten(),adj_pred.flatten(),zero_division=0)
     return [shd,prec,recall]
 
-def DagSimulator(d, s0, graph_type, triu=True):
+def dag_simulator(d, s0, graph_type, triu=True):
     """Simulate random DAG with some expected number of edges.
     Args:
         d (int): num of nodes
