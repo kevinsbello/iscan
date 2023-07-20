@@ -29,8 +29,8 @@ def find_elbow(diff_dict,hard_thres = 30,online = True):
 def get_min_rank_sum(HX,HY):
     """
     Find which node has the min rank sum in dataset X and dataset Y
-    :param HX: list. Variance of hessian estimation for dataset X.
-    :param HY: list. Variance of hessian estimation for dataset Y.
+    :param HX: Matrix. Hessian estimation for dataset X.
+    :param HY: Matrix. Hessian estimation for dataset Y.
     :return: int. An index of node who has the smallest rank sum.
     """
     order_X = torch.argsort(HX.var(axis=0))
@@ -71,7 +71,6 @@ def iSCAN(X, Y, eta_G, eta_H, normalize_var=False, shifted_thres=2,
     for i in range(d - 1):
 
         A = torch.concat((X, Y))
-        HA = Stein_hess(A, eta_G, eta_H).var(axis=0)
         HX = Stein_hess(X, eta_G, eta_H)
         HY = Stein_hess(Y, eta_G, eta_H)
 
@@ -85,9 +84,9 @@ def iSCAN(X, Y, eta_G, eta_H, normalize_var=False, shifted_thres=2,
                 HY = HY / HY.mean(axis=0)
             l = get_min_rank_sum(HX,HY)
 
-        HX = HX[l]
-        HY = HY[l]
-        HA = HA[l]
+        HX = HX.var(axis=0)[l]
+        HY = HY.var(axis=0)[l]
+        HA = Stein_hess(A, eta_G, eta_H).var(axis=0)[l]
 
         #HX_dict[active_nodes[l]] = HX.numpy()
         #HY_dict[active_nodes[l]] = HY.numpy()

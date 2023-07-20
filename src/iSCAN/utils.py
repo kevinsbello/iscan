@@ -19,9 +19,15 @@ def set_seed(seed: int = 42) -> None:
     os.environ["PYTHONHASHSEED"] = str(seed)
     print(f"Random seed set as {seed}")
 
-def nodes_metrics(y_actual, y_pred):
-    # y_actual is the list for true shifted nodes
-    # y_pred is the list for predicted shifted nodes
+def nodes_metrics(true_shifted_nodes, predict_shifted_node,d):
+    # true_shifted_nodes is the list for true shifted nodes
+    # predict_shifted_node is the list for predicted shifted nodes
+    # d is the number of nodes
+    y_actual = np.zeros(d)
+    y_pred = np.zeros(d)
+    y_actual[true_shifted_nodes] = 1
+    y_pred[predict_shifted_node] = 1
+
     prec = precision_score(y_actual,y_pred, zero_division=0)
     recall = recall_score(y_actual, y_pred, zero_division=0)
     f1 = f1_score(y_actual, y_pred, zero_division=0)
