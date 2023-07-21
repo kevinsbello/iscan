@@ -34,10 +34,10 @@ def nodes_metrics(true_shifted_nodes, predict_shifted_node,d):
     return [prec,recall,f1]
 
 def ddag_metrics(adj_true,adj_pred):
-    shd = np.sum(adj_true!=adj_pred)
     prec = precision_score(adj_true.flatten(),adj_pred.flatten(),zero_division=0)
     recall = recall_score(adj_true.flatten(),adj_pred.flatten(),zero_division=0)
-    return [shd,prec,recall]
+    f1 = f1_score(adj_true.flatten(),adj_pred.flatten(), zero_division=0)
+    return [prec,recall,f1]
 
 def simulate_dag(d, s0, graph_type):
     """Simulate random DAG with some expected number of edges.
@@ -192,9 +192,9 @@ class DataGenerator:
         return (x_adjacency, y_adjacency, ddag, change_nodes)
 
     def generate_edges_data(self,delete_prop):
-        x_adjacency, y_adjacency, ddag, change_nodes = self.generate_pair_adjacency(delete_prop)
+        x_adjacency, y_adjacency, ddag, changed_nodes = self.generate_pair_adjacency(delete_prop)
         self.X = self.noise_X.clone()
         self.Y = self.noise_Y.clone()
         self.sample_edges(self.X,x_adjacency, ddag)
         self.sample_edges(self.Y,y_adjacency, ddag)
-        return self.X, self.Y, ddag
+        return self.X, self.Y, changed_nodes,ddag

@@ -64,10 +64,6 @@ def iSCAN(X, Y, eta_G, eta_H, normalize_var=False, shifted_thres=2,
     active_nodes = list(range(d))
     diff_dict = dict()
 
-    HX_dict = dict()
-    HY_dict = dict()
-    HA_dict = dict()
-
     for i in range(d - 1):
 
         A = torch.concat((X, Y))
