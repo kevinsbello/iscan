@@ -1,0 +1,49 @@
+[build-system]
+requires = ['setuptools>=65']
+build-backend = 'setuptools.build_meta'
+
+[project]
+name = 'iscan-dag'
+requires-python = ">=3.6"
+dynamic = ['version']
+authors = [
+    {name = "Kevin Bello", email = "kbello@cs.cmu.edu"},
+    {name = "Tianyu Chen", email = "tianyuchen@utexas.edu"},
+]
+description = 'Implementation of the iSCAN algorithm for detecting distribution shifts'
+readme = "README.md"
+license = {text = "Apache 2.0"}
+keywords = ['iscan', 'distribution shifts', 'causal mechanisms', 'bayesian networks', 'structure learning', 'difference network']
+classifiers = [
+    'Programming Language :: Python :: 3',
+    'License :: OSI Approved :: Apache Software License',
+    'Operating System :: OS Independent',
+    'Topic :: Scientific/Engineering :: Artificial Intelligence',
+    'Intended Audience :: Science/Research',
+    'Development Status :: 3 - Alpha',
+]
+dependencies = [
+    'numpy', 
+    'scikit-learn', 
+    'torch', 
+    'rpy2', 
+    'GPy'
+]
+
+[tool.setuptools.dynamic]
+version = {file = "src/VERSION"}
+
+[project.urls]
+'Repository' = 'https://github.com/kevinsbello/iscan-dag'
+'Documentation' = "https://iscan-dag.readthedocs.io/en/latest/"
+'Issues' = 'https://github.com/kevinsbello/iscan-dag/issues'
+
+[metadata]
+long_description = 'file: README.md, LICENSE'
+long_description_content_type = 'text/markdown'
+url = 'https://github.com/kevinsbello/iscan-dag'
+
+[tool.setuptools.packages.find]
+where = ["src"]  # list of folders that contain the packages (["."] by default)
+exclude = [".tests*", ".examples*"]  # exclude packages matching these glob patterns (empty by default)
+
