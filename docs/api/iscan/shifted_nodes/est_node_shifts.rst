@@ -8,8 +8,7 @@
 
    .. rubric:: References
 
-   - T. Chen, K. Bello, B. Aragam, P. Ravikumar. (2023).
-   `iSCAN: Identifying Causal Mechanism Shifts among Nonlinear Additive Noise Models. <https://arxiv.org/abs/2306.17361>`_.
+   - T. Chen, K. Bello, B. Aragam, P. Ravikumar. (2023). `iSCAN: Identifying Causal Mechanism Shifts among Nonlinear Additive Noise Models. <https://arxiv.org/abs/2306.17361>`_
 
    :param X: Dataset with shape :math:`(n,d)`, where :math:`n` is the number of samples,
              and :math:`d` is the number of variables/nodes.
