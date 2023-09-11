@@ -37,7 +37,7 @@ version = {file = "src/VERSION"}
 
 [project.urls]
 'Repository' = 'https://github.com/kevinsbello/iscan'
-'Documentation' = "https://iscan.readthedocs.io/en/latest/"
+'Documentation' = "https://iscan-dag.readthedocs.io/en/latest/"
 'Issues' = 'https://github.com/kevinsbello/iscan/issues'
 
 [metadata]
