@@ -43,13 +43,13 @@ extensions = [
 ]
 
 autoapi_dirs = ['../src/iscan/']
-# autoapi_generate_api_docs = False
-autoapi_root = 'api'
-autoapi_options = [ 'members', 'undoc-members', 'private-members', 'show-inheritance', 'show-module-summary', 'special-members', ]
-autoapi_keep_files = True
-autoapi_python_class_content = "both"
-autoapi_render_in_single_page = ["class", "function", "method"]
-autoapi_template_dir = '_autoapi_templates'
+autoapi_generate_api_docs = False
+# autoapi_root = 'api'
+# autoapi_options = [ 'members', 'undoc-members', 'private-members', 'show-inheritance', 'show-module-summary', 'special-members', ]
+# autoapi_keep_files = True
+# autoapi_python_class_content = "both"
+# autoapi_render_in_single_page = ["class", "function", "method"]
+# autoapi_template_dir = '_autoapi_templates'
 
 
 autosummary_generate = True
@@ -131,6 +131,7 @@ html_theme_options = {
                 "icon": "material/weather-night",
                 "name": "Switch to dark mode",
             },
+            "primary": "teal",
         },
         {
             "media": "(prefers-color-scheme: dark)",
@@ -139,6 +140,7 @@ html_theme_options = {
                 "icon": "material/weather-sunny",
                 "name": "Switch to light mode",
             },
+            "primary": "teal",
         },
     ],
     "version_dropdown": False,
