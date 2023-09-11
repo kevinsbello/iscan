@@ -25,10 +25,7 @@ classifiers = [
 dependencies = [
     'numpy', 
     'scikit-learn', 
-    'torch', 
-    'rpy2', 
-    'GPy',
-    'kneed',
+    'torch',  
     'igraph',
 ]
 

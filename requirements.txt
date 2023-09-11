@@ -1,0 +1,7 @@
+numpy 
+scikit-learn
+torch
+rpy2 
+GPy
+kneed
+igraph
