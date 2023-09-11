@@ -27,21 +27,23 @@ dependencies = [
     'scikit-learn', 
     'torch', 
     'rpy2', 
-    'GPy'
+    'GPy',
+    'kneed',
+    'igraph',
 ]
 
 [tool.setuptools.dynamic]
 version = {file = "src/VERSION"}
 
 [project.urls]
-'Repository' = 'https://github.com/kevinsbello/iscan-dag'
-'Documentation' = "https://iscan-dag.readthedocs.io/en/latest/"
-'Issues' = 'https://github.com/kevinsbello/iscan-dag/issues'
+'Repository' = 'https://github.com/kevinsbello/iscan'
+'Documentation' = "https://iscan.readthedocs.io/en/latest/"
+'Issues' = 'https://github.com/kevinsbello/iscan/issues'
 
 [metadata]
 long_description = 'file: README.md, LICENSE'
 long_description_content_type = 'text/markdown'
-url = 'https://github.com/kevinsbello/iscan-dag'
+url = 'https://github.com/kevinsbello/iscan'
 
 [tool.setuptools.packages.find]
 where = ["src"]  # list of folders that contain the packages (["."] by default)
