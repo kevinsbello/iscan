@@ -1,4 +1,4 @@
-# ![iSCAN](https://raw.githubusercontent.com/kevinsbello/iscan/main/logo/iscan.png)
+# ![iSCAN](https://raw.githubusercontent.com/kevinsbello/iscan/master/logo/%E2%80%8Eiscan.png)
 
 <div align=center>
   <a href="https://pypi.org/project/iscan-dag"><img src="https://img.shields.io/pypi/v/iscan-dag"></a>
