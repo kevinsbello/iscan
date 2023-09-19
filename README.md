@@ -74,6 +74,7 @@ Also, let $s(x) = \nabla \log q(x)$ be the associated score function.
 Then, under with nonlinear assumption and additive noise assumption, we have:
 
 https://latex.codecogs.com/svg.image?\inline&space;(i)\text{If}\,j\,\text{is&space;a&space;leaf&space;in&space;all&space;DAGs}\,G^h,\text{then}\,j\,\text{is&space;a&space;shifted&space;node&space;if&space;and&space;only&space;if}\,\text{Var}_X\left[\frac{\partial&space;s_j(X)}{\partial&space;x_j}\right]>0&space;
+
 https://latex.codecogs.com/svg.image?\inline&space;(ii)\text{If}\,j\,\text{is&space;not&space;a&space;leaf&space;in&space;at&space;least&space;one&space;DAG}\,G^h,\text{then}\,\text{Var}_X\left[\frac{\partial&space;s_j(X)}{\partial&space;x_j}\right]>0
 
 ### Identifying the shifted edges
