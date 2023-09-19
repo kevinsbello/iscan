@@ -74,7 +74,8 @@ Also, let $s(x) = \nabla \log q(x)$ be the associated score function.
 Then, under with nonlinear assumption and additive noise assumption, we have:
 
 $$
-(i) \text{ If } j \text{ is a leaf in all DAGs } G^h, \text{ then } j \text{ is a shifted node if and only if }  \text{Var}_X\left[ \frac{\partial s_j(X)}{\partial x_j} \right] > 0\\
+(i) \text{ If } j \text{ is a leaf in all DAGs } G^h, \text{ then } j \text{ is a shifted node if and only if }  \text{Var}_X\left[ \frac{\partial s_j(X)}{\partial x_j} \right] > 0 \\
+
 (ii) \text{ If } j \text{ is not a leaf in at least one DAG } G^h, \text{ then } \text{Var}_X\left[ \frac{\partial s_j(X)}{\partial x_j} \right] > 0
 $$
 
