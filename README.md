@@ -72,6 +72,7 @@ We propose a new method of  identifying changes (shifts) in causal mechanisms be
 Let $h$ be the index of the environment, and $p^h(x)$ denote the pdf of the $h$-th environment. Let $q(x)$ be the pdf of the mixture distribution of the all $H$ environments such that $q(x) = \sum_{h=1}^H w_h p^h(x)$.
 Also, let $s(x) = \nabla \log q(x)$ be the associated score function. 
 Then, under with nonlinear assumption and additive noise assumption, we have:
+
 $$
 (i) \text{ If } j \text{ is a leaf in all DAGs } G^h, \text{ then } j \text{ is a shifted node if and only if }  \text{Var}_X\left[ \frac{\partial s_j(X)}{\partial x_j} \right] > 0\\
 (ii) \text{ If } j \text{ is not a leaf in at least one DAG } G^h, \text{ then } \text{Var}_X\left[ \frac{\partial s_j(X)}{\partial x_j} \right] > 0
