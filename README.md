@@ -69,14 +69,16 @@ We propose a new method of  identifying changes (shifts) in causal mechanisms be
 
 ### Identifying the shifted leaf nodes
 
-Let $h$ be the index of the environment, and $p^h(x)$ denote the pdf of the $h$-th environment. Let $q(x)$ be the pdf of the mixture distribution of the all $H$ environments such that $q(x) = \sum_{h=1}^H w_h p^h(x)$.
+Let $h$ be the index of the environment, and $p^h(x)$ denote the pdf of the $h$-th environment. Let $q(x)$ be the pdf of the mixture distribution of the all $H$ environments such that $q(x) = \sum_h w_h p^h(x)$.
 Also, let $s(x) = \nabla \log q(x)$ be the associated score function. 
 Then, under with nonlinear assumption and additive noise assumption, we have:
 
-https://latex.codecogs.com/svg.image?\inline&space;(i)\text{If}\,j\,\text{is&space;a&space;leaf&space;in&space;all&space;DAGs}\,G^h,\text{then}\,j\,\text{is&space;a&space;shifted&space;node&space;if&space;and&space;only&space;if}\,\text{Var}_X\left[\frac{\partial&space;s_j(X)}{\partial&space;x_j}\right]>0&space;
-
-https://latex.codecogs.com/svg.image?\inline&space;(ii)\text{If}\,j\,\text{is&space;not&space;a&space;leaf&space;in&space;at&space;least&space;one&space;DAG}\,G^h,\text{then}\,\text{Var}_X\left[\frac{\partial&space;s_j(X)}{\partial&space;x_j}\right]>0
-
+```math
+\begin{array}{cl}
+(i) \text{ If } j \text{ is a leaf in all DAGs } G^h, \text{ then } j \text{ is a shifted node if and only if }  \text{Var}_X\left[ \frac{\partial s_j(X)}{\partial x_j} \right] > 0\\
+(ii) \text{ If } j \text{ is not a leaf in at least one DAG } G^h, \text{ then } \text{Var}_X\left[ \frac{\partial s_j(X)}{\partial x_j} \right] > 0
+\end{array}
+```
 ### Identifying the shifted edges
 
 By utilizing a common estimated topological order across all environments, individuals can customize their definition of functional shifted edges and apply any available (non)parametric statistical technique to identify these edges based on the detected shifted nodes. This approach can significantly expedite the process, particularly when the occurrence of shifted nodes is sparse, obviating the need for exhaustive edge comparisons across all nodes and environments.
