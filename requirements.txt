@@ -5,3 +5,4 @@ rpy2
 GPy
 kneed
 igraph
+pandas

@@ -4,7 +4,7 @@
   <a href="https://pypi.org/project/iscan-dag"><img src="https://img.shields.io/pypi/v/iscan-dag"></a>
   <a href="https://pypi.org/project/iscan-dag"><img src="https://img.shields.io/pypi/pyversions/iscan-dag"></a>
   <a href="https://pypi.org/project/iscan-dag"><img src="https://img.shields.io/pypi/wheel/iscan-dag"></a>
-  <!-- <a href="https://pypistats.org/packages/iscan-dag"><img src="https://img.shields.io/pypi/dm/iscan-dag"></a> -->
+  <a href="https://pypistats.org/packages/iscan-dag"><img src="https://img.shields.io/pypi/dm/iscan-dag"></a>
   <a href="https://pypi.org/project/iscan-dag"><img src="https://img.shields.io/pypi/l/iscan-dag"></a>
 </div>
 

@@ -27,7 +27,16 @@ dependencies = [
     'scikit-learn', 
     'torch',  
     'igraph',
+    'GPy',
+    'kneed',
+    'pandas',
 ]
+
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.package-data]
+iscan = ["*.R"]
 
 [tool.setuptools.dynamic]
 version = {file = "src/VERSION"}

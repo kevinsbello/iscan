@@ -1,13 +1,9 @@
 import os
 import numpy as np
 from typing import Union
-
 import rpy2.robjects as ro
 import rpy2.robjects.numpy2ri
 from rpy2.robjects.packages import importr
-utils = importr('utils')
-utils.chooseCRANmirror(ind=1) 
-utils.install_packages('FOCI', quiet=True)
 
 
 __all__ = ["est_struct_shifts"]
@@ -79,6 +75,11 @@ def est_struct_shifts(X: np.ndarray,
     np.ndarray
         Estimation of structural changes for the set of shifted nodes
     """
+    utils = importr('utils')
+    packs = utils.installed_packages()
+    if 'FOCI' not in packs:
+        utils.chooseCRANmirror(ind=1) 
+        utils.install_packages('FOCI', quiet=True)
     shifted_nodes, order = np.array(shifted_nodes), np.array(order)
     if method == 'foci':
         x_adj = _estimate_parents_foci(X, shifted_nodes, order)
