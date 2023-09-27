@@ -1,7 +1,7 @@
 .. image:: ../logo/iscan.png
    :align: center
 
-The ``iscan-dag`` library is a Python 3 package designed for detecting which variables, 
+The `iscan-dag <https://pypi.org/project/iscan-dag/>`_ library is a Python 3 package designed for detecting which variables, 
 if any, have undergo a casual mechanism shift **given multiple datasets**. 
 
 iSCAN operates through a systematic process:
@@ -52,8 +52,11 @@ Features
 --------
 
 - Shifted nodes are detected without the need to estimate the DAG structure for each dataset.
-- iSCAN is agnostic to the type of score's Jacobian estimator. The current implementation is based on a kernelized Stein's estimator. See [`stein_hess`](https://iscan-dag.readthedocs.io/en/latest/api/iscan/score_estimator/stein_hess/) for details.
-- iSCAN's time complexity is not influenced by the underlying graph density, and will run faster than methods such as DCI or UT-IGSP for large number of variables due to its omission of (non)parametric conditional independence tests.
+- iSCAN is agnostic to the type of score's Jacobian estimator. 
+The current implementation is based on a kernelized Stein's estimator. 
+See :py:func:`~iscan.score_estimator.stein_hess` for details.
+- iSCAN's time complexity is not influenced by the underlying graph density, and will run faster 
+than methods such as DCI or UT-IGSP for large number of variables due to its omission of (non)parametric conditional independence tests.
 
 A Quick Overview of iSCAN
 -------------------------
@@ -71,18 +74,18 @@ generalizing prior work that assumed linear models. We assume that each dataset 
    :align: center
 
 
-In [[1]][iscan], we prove that the Hessian of the log-density function of the **mixture distribution** reveals 
+In `[1] <https://arxiv.org/abs/2306.17361>`_, we prove that the Hessian of the log-density function of the **mixture distribution** reveals 
 information about changes (shifts) in general non-parametric functional mechanisms for the leaf variables. 
 Thus, allowing for the detection of shifted nodes. Our method leads to significant improvements in identifying shifted nodes.
 
-**Theorem 1 (see [[1]][iscan]).** 
+**Theorem 1 (see `[1] <https://arxiv.org/abs/2306.17361>`_).** 
 Let :math:`h` be the index of the environment (dataset), and :math:`p^h(x)` denote the pdf of the :math:`h`-th environment. 
 Let :math:`q(x)` be the pdf of the mixture distribution of the all :math:`H` environments such that 
 :math:`q(x) = \sum_h w_h p^h(x)`. Also, let :math:`s(x) = \nabla \log q(x)` be the associated score function. 
 Then, under mild assumptions, if :math:`j` is a leaf variable in all environments, we have:
 
-   .. math::
-      j \text{ is a shifted node } \iff  \text{Var}_{q}\left[ \frac{\partial s_j(X)}{\partial x_j} \right] > 0.
+.. math::
+   j \text{ is a shifted node } \iff  \text{Var}_{q}\left[ \frac{\partial s_j(X)}{\partial x_j} \right] > 0.
 
 
 .. toctree::
