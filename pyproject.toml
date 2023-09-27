@@ -30,6 +30,7 @@ dependencies = [
     'GPy',
     'kneed',
     'pandas',
+    'rpy2',
 ]
 
 [tool.setuptools]

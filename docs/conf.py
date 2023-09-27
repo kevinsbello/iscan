@@ -161,6 +161,8 @@ autodoc_default_options = {
 autodoc_typehints = "signature"
 autodoc_typehints_description_target = "documented"
 autodoc_typehints_format = "short"
+autodoc_mock_imports = ['numpy', 'rpy2']
+
 
 # myst_enable_extensions = ["dollarmath"]
 
