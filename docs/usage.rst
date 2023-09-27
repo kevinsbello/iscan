@@ -7,7 +7,7 @@ Install the package
 -------------------
 
 We recommend using a virtual environment via ``virtualenv`` or ``conda``, and use ``pip`` to install ``iscan-dag``.
-To use iSCAN, first install it using pip:
+To use :py:mod:`iscan`, first install it using pip:
 
 .. code-block:: console
 
@@ -16,4 +16,4 @@ To use iSCAN, first install it using pip:
 Using iSCAN
 -----------
 
-See the `iPython notebook <https://github.com/kevinsbello/iscan/blob/main/examples/dagma_test.ipynb>`_ for a tutorial.
+See the `iPython notebook <https://github.com/kevinsbello/iscan/blob/master/example/example.ipynb>`_ for a tutorial.

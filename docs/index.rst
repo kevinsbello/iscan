@@ -7,10 +7,10 @@ if any, have undergo a casual mechanism shift **given multiple datasets**.
 iSCAN operates through a systematic process:
 
 1. For each dataset, iSCAN initially evaluates at each sample the Hessian of the data distribution. 
-This step is helpful in identifying the leaf variables (nodes) for all the datasets.
+   This step is helpful in identifying the leaf variables (nodes) for all the datasets.
 2. Subsequently, for the identified leaf variable, iSCAN evaluates at each sample the Hessian of the data distribution 
-for the pooled data (resembling a mixture distribution). Then, based on the variance of the Hessian values, 
-iSCAN determines if the given leaf node has undergone a mechanism shift (termed **shifted node**).
+   for the pooled data (resembling a mixture distribution). Then, based on the variance of the Hessian values, 
+   iSCAN determines if the given leaf node has undergone a mechanism shift (termed **shifted node**).
 
 The steps above are applied iteratively, eliminating the identified leaf variable across all datasets at each iteration. 
 See :py:func:`~iscan.shifted_nodes.est_node_shifts` for more details.
@@ -53,10 +53,10 @@ Features
 
 - Shifted nodes are detected without the need to estimate the DAG structure for each dataset.
 - iSCAN is agnostic to the type of score's Jacobian estimator. 
-The current implementation is based on a kernelized Stein's estimator. 
-See :py:func:`~iscan.score_estimator.stein_hess` for details.
+  The current implementation is based on a kernelized Stein's estimator. 
+  See :py:func:`~iscan.score_estimator.stein_hess` for details.
 - iSCAN's time complexity is not influenced by the underlying graph density, and will run faster 
-than methods such as DCI or UT-IGSP for large number of variables due to its omission of (non)parametric conditional independence tests.
+  than methods such as DCI or UT-IGSP for large number of variables due to its omission of (non)parametric conditional independence tests.
 
 A Quick Overview of iSCAN
 -------------------------
@@ -78,7 +78,7 @@ In `[1] <https://arxiv.org/abs/2306.17361>`_, we prove that the Hessian of the l
 information about changes (shifts) in general non-parametric functional mechanisms for the leaf variables. 
 Thus, allowing for the detection of shifted nodes. Our method leads to significant improvements in identifying shifted nodes.
 
-**Theorem 1 (see `[1] <https://arxiv.org/abs/2306.17361>`_).** 
+**Theorem 1** (see `[1] <https://arxiv.org/abs/2306.17361>`_).
 Let :math:`h` be the index of the environment (dataset), and :math:`p^h(x)` denote the pdf of the :math:`h`-th environment. 
 Let :math:`q(x)` be the pdf of the mixture distribution of the all :math:`H` environments such that 
 :math:`q(x) = \sum_h w_h p^h(x)`. Also, let :math:`s(x) = \nabla \log q(x)` be the associated score function. 
