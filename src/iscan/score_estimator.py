@@ -23,7 +23,6 @@ def stein_hess(X: torch.Tensor, eta_G: float, eta_H: float, s: Optional[float] =
     torch.Tensor
         Estimation of the score's Jacobian diagonal.
     """
-    torch.set_default_dtype(torch.double)
     n, d = X.shape
     X_diff = X.unsqueeze(1) - X
     if s is None:

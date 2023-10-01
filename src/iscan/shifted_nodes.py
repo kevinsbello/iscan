@@ -121,7 +121,6 @@ def est_node_shifts(
     Tuple[list, list, dict]
         estimated shifted nodes, topological order, and dict of variance ratios for all nodes.
     """
-    torch.set_default_dtype(torch.double)
     vprint = print if verbose else lambda *a, **k: None
 
     if type(X) is np.ndarray:
@@ -129,7 +128,6 @@ def est_node_shifts(
     if type(Y) is np.ndarray:
         Y = torch.from_numpy(Y)
     
-    X, Y = X.double(), Y.double()
     n, d = X.shape
     order = [] # estimates a valid topological sort
     active_nodes = list(range(d))
