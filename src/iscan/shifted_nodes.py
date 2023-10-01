@@ -73,7 +73,7 @@ def est_node_shifts(
         eta_H: float = 0.001,
         normalize_var: bool = False, 
         shifted_node_thres: float = 2.,
-        elbow: bool = False,
+        elbow: bool = True,
         elbow_thres: float = 30.,
         elbow_online: bool = True,
         use_both_rank: bool = True,
