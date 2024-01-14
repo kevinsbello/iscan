@@ -4,16 +4,16 @@
   <a href="https://pypi.org/project/iscan-dag"><img src="https://img.shields.io/pypi/v/iscan-dag"></a>
   <a href="https://pypi.org/project/iscan-dag"><img src="https://img.shields.io/pypi/pyversions/iscan-dag"></a>
   <a href="https://pypi.org/project/iscan-dag"><img src="https://img.shields.io/pypi/wheel/iscan-dag"></a>
-  <a href="https://pypistats.org/packages/iscan-dag"><img src="https://img.shields.io/pypi/dm/iscan-dag"></a>
+  <a href="https://pepy.tech/project/iscan-dag"><img src="https://pepy.tech/badge/iscan-dag"></a>
   <a href="https://pypi.org/project/iscan-dag"><img src="https://img.shields.io/pypi/l/iscan-dag"></a>
 </div>
 
 
-The `iscan-dag` library is a Python 3 package designed for detecting which variables, if any, have undergo a casual mechanism shift *given multiple datasets*. 
+The `iscan-dag` library is a Python 3 package designed for detecting which variables, if any, have undergone a causal mechanism shift *given multiple datasets*. 
 
 iSCAN operates through a systematic process:
 
-1. For each dataset, iSCAN initially evaluates at each sample the Hessian of the data distribution. This step is helpful in identifying the leaf variables (nodes) for all the datasets.
+1. For each dataset, iSCAN initially evaluates the Hessian of the data distribution at each sample. This step helps identify the leaf variables (nodes) for all the datasets.
 2. Subsequently, for the identified leaf variable, iSCAN evaluates at each sample the Hessian of the data distribution for the pooled data (resembling a mixture distribution). Then, based on the variance of the Hessian values, iSCAN determines if the given leaf node has undergone a mechanism shift (termed **shifted node**).
 
 The steps above are applied iteratively, eliminating the identified leaf variable across all datasets at each iteration. See [`iscan.est_node_shifts`](https://iscan-dag.readthedocs.io/en/latest/api/iscan/shifted_nodes/est_node_shifts/) for more details.
@@ -46,7 +46,7 @@ If you find this code useful, please consider citing:
 
 - Shifted nodes are detected without the need to estimate the DAG structure for each dataset.
 - iSCAN is agnostic to the type of score's Jacobian estimator. The current implementation is based on a kernelized Stein's estimator. See [`stein_hess`](https://iscan-dag.readthedocs.io/en/latest/api/iscan/score_estimator/stein_hess/) for details.
-- iSCAN's time complexity is not influenced by the underlying graph density, and will run faster than methods such as DCI or UT-IGSP for large number of variables due to its omission of (non)parametric conditional independence tests.
+- iSCAN's time complexity is not influenced by the underlying graph density and will run faster than methods such as DCI or UT-IGSP for a large number of variables due to its omission of (non)parametric conditional independence tests.
 
 ## Getting Started
 
@@ -59,7 +59,7 @@ $ pip install -U iscan-dag
 
 ### Using iSCAN
 
-See an example on how to use iSCAN in this [iPython notebook][example].
+See an example of how to use iSCAN in this [iPython notebook][example].
 
 [example]: https://github.com/kevinsbello/iscan/blob/master/example/example.ipynb
 
@@ -75,7 +75,7 @@ iSCAN considers that each **SCM belongs to the general class of nonlinear additi
 In [[1]][iscan], we prove that the Hessian of the log-density function of the **mixture distribution** reveals information about changes (shifts) in general non-parametric functional mechanisms for the leaf variables. Thus, allowing for the detection of shifted nodes. Our method leads to significant improvements in identifying shifted nodes.
 
 **Theorem 1 (see [[1]][iscan]).** 
-Let $h$ be the index of the environment (dataset), and $p^h(x)$ denote the pdf of the $h$-th environment. Let $q(x)$ be the pdf of the mixture distribution of the all $H$ environments such that $q(x) = \sum_h w_h p^h(x)$. Also, let $s(x) = \nabla \log q(x)$ be the associated score function. Then, under mild assumptions, if $j$ is a leaf variable in all environments, we have:
+Let $h$ be the index of the environment (dataset), and $p^h(x)$ denote the pdf of the $h$-th environment. Let $q(x)$ be the pdf of the mixture distribution of all $H$ environments such that $q(x) = \sum_h w_h p^h(x)$. Also, let $s(x) = \nabla \log q(x)$ be the associated score function. Then, under mild assumptions, if $j$ is a leaf variable in all environments, we have:
 
 $$ 
 j \text{ is a shifted node } \iff  \text{Var}_{q}\left[ \frac{\partial s_j(X)}{\partial x_j} \right] > 0.
@@ -97,11 +97,11 @@ $$
 ## Contents
 
 - `score_estimator.py`:  Estimates the diagonal of the Hessian of $\log p(x)$ at the provided samples points.
-- `utils.py`: Utility functions for generating synthetic data, and evaluate the results
+- `utils.py`: Utility functions for generating synthetic data, and evaluating the results
 - `shifted_nodes.py`: Implements iSCAN, providing detected shifted nodes.
 - `shifted_edges.py`: Implements the discovery of structural changes (shifted edges).
 - `my_foci.R`: R implementation that uses `FOCI` for finding parents based on given nodes and topological order.
 
 ## Acknowledgements
 
-We thank the authors of the [SCORE](https://github.com/paulrolland1307/SCORE/tree/main) for making their code available. Part of our code is based on their implementation, specially the `score_estimator.py` file.
+We thank the authors of the [SCORE](https://github.com/paulrolland1307/SCORE/tree/main) for making their code available. Part of our code is based on their implementation, especially the `score_estimator.py` file.
