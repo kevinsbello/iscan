@@ -35,10 +35,11 @@ If you find this code useful, please consider citing:
 
 ```bibtex
 @article{chen2023iscan,
-    author = {Chen, Tianyu and Bello, Kevin and Aragam, Bryon and Ravikumar, Pradeep},
-    title = {{iSCAN: Identifying Causal Mechanism Shifts among Nonlinear Additive Noise Models}},
-    journal = {arXiv preprint arXiv:2306.17361},
-    year = {2023}
+  title={iSCAN: identifying causal mechanism shifts among nonlinear additive noise models},
+  author={Chen, Tianyu and Bello, Kevin and Aragam, Bryon and Ravikumar, Pradeep},
+  journal={Advances in Neural Information Processing Systems},
+  volume={36},
+  year={2023}
 }
 ```
 
