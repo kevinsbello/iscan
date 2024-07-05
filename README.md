@@ -25,7 +25,7 @@ As an optional step, the library also includes a function to detect structural c
 
 This is an implementation of the following paper:
 
-[1] Chen T., Bello K., Aragam B., Ravikumar P. (2023). ["iSCAN: Identifying Causal Mechanism Shifts among Nonlinear Additive Noise Models"][iscan]. Neural Information Processing Systems ([NeurIPS](https://nips.cc/Conferences/2023/)). 
+[1] Chen T., Bello K., Aragam B., Ravikumar P. (2023). ["iSCAN: Identifying Causal Mechanism Shifts among Nonlinear Additive Noise Models"][iscan]. [Advances in Neural Information Processing Systems](https://nips.cc/Conferences/2023/). 
 
 [iscan]: https://arxiv.org/abs/2306.17361
 
